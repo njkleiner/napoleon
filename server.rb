@@ -16,6 +16,7 @@ get "/:code" do
     if validate params[:code]
         begin
             target = File.read("redirects/#{params[:code]}")
+            target.strip!
 
             redirect target
         rescue
