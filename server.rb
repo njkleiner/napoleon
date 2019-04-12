@@ -4,7 +4,7 @@ require "sinatra"
 
 set :port, ENV["PORT"] || 8080
 
-def validate(code)
+def validate?(code)
     (code =~ /^[a-z0-9_-]+$/) == 0
 end
 
@@ -13,7 +13,7 @@ get "/" do
 end
 
 get "/:code" do
-    if validate params[:code]
+    if validate? params[:code]
         begin
             target = File.read("redirects/#{params[:code]}")
             target.strip!
