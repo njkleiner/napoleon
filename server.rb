@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 
-require "sinatra"
+require 'sinatra'
 
-set :port, ENV["PORT"] || 8080
+set :port, ENV['PORT'] || 8080
 
 def validate?(code)
     (code =~ /^[a-z0-9_-]+$/) == 0
 end
 
-get "/:code" do
+get '/:code' do
     if validate? params[:code]
         begin
             target = File.read("redirects/#{params[:code]}")
@@ -21,6 +21,6 @@ get "/:code" do
         end
     else
         status 400
-        body "Invalid code"
+        body 'Invalid code'
     end
 end
