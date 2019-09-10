@@ -1,6 +1,6 @@
 # napoleon
 
-> A file-first, no-database URL shortener
+> A file-first, [no-database](https://indieweb.org/database-antipattern) URL shortener
 
 ## Getting Started
 
