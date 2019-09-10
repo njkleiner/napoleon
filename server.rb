@@ -8,10 +8,6 @@ def validate?(code)
     (code =~ /^[a-z0-9_-]+$/) == 0
 end
 
-get "/" do
-    "Hello World"
-end
-
 get "/:code" do
     if validate? params[:code]
         begin
